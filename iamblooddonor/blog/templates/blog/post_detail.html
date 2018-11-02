@@ -1,0 +1,45 @@
+{% extends 'blooddonor/base.html' %}
+{% load static %}
+{% block content %}
+
+    <!-- blog part start  -->
+    <section class="blog_part">
+        <div class="container">
+            <div class="row justify-content-start">
+                <div class="col-lg-6">
+                    <div class="about_content">
+                        <h2>Our Main <span>Purpose</span></h2>
+                        <img src="images/line.png" alt="">
+                        <h4>Our aim is to provide you better treatment at minimum <br>cost and wise to have you good health.
+                        </h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row justify-content-center mt-5">
+                <div class="col-lg-5">
+                    <div>
+                        <div class="blog_img">
+                            <img src="{{ object.featured_image.url }}" class="img-fluid" alt="">
+                            <img src="{% static 'blooddonor/images/textture.png' %}" class="img-fluid" id="blog_texture" alt="">
+                        </div>
+                        <div class="blog_content text-left">
+                            <h2>
+                                {{ object.title }}
+                            </h2>
+                              {% if object.author == user %}
+                                  <div>
+                                    <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'post-update' object.id %}">Update</a>
+                                    <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'post-delete' object.id %}">Delete</a>
+                                  </div>
+                             {% endif %}
+                            <p class="blog_post">By {{ object.author }}| {{ object.posted_on }}| 26 Comments| Views({{ object.view_count }})</p>
+                            <p>{{ object.content }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- blog part end  -->
+{% endblock content %}

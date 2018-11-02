@@ -1,0 +1,314 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>I'mBloodDonor</title>
+    <!-- fav icon  -->
+    <link rel="icon" href="{% static 'blooddonor/images/blood_drop.png' %}">
+    <link rel="stylesheet" href="{% static 'blooddonor/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'blooddonor/css/fontawesome-all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'blooddonor/css/slick.css' %}">
+    <link rel="stylesheet" href="{% static 'blooddonor/css/animate.css' %}">
+    <!-- main css -->
+    <link rel="stylesheet" href="{% static 'blooddonor/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'blooddonor/css/responsive.css' %}">
+</head>
+<body>
+<!-- preloader start  -->
+    <div class="Pre_loader">
+        <div class="loader">Loading...</div>
+    </div>
+    <!-- preloader end  -->
+
+    <!-- button start -->
+    <section class="button">
+        <a href="#header_part"><img src="{% static 'blooddonor/images/down-arrow.png' %}" alt=""></a>
+    </section>
+    <!-- button end -->
+
+    <!--Toggler-->
+    <div class="collapse navbar-collapse m-0 p-0 d-none" id="navber_toggler">
+        <div class="cross_sign">
+            <img src="{% static 'blooddonor/images/cross.png' %}" alt="">
+        </div>
+        <ul class="navbar-nav  mr-auto ">
+             <li class="nav-item active ">
+                        <a class="nav-link active_class" href="{% url 'home' %}"> Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'about' %}">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'post-list' %}">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'post-list' %}">Campaign News</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'gallery' %}">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+                    </li>
+        </ul>
+    </div>
+    <!-- Header part start  -->
+    <nav class="sub_nav">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-lg-5 col-sm-6 col-7">
+                    <div class="greeting">
+                        <p>Welcome To I'mBloodDonor</p>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-sm-6 col-5">
+                    <div class="link_icon">
+                        <a href="https://www.facebook.com/iambloodonor/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://twitter.com/IamBloodDonor/" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/iamblooddonor/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://github.com/jubayer-hossain" target="_blank"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <img src="{% static 'blooddonor/images/heart-img.png' %}" alt="">
+    </nav>
+
+    <header id="header_part">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-lg-3 col-sm-5">
+                    <div class="logo">
+                        <a href="{% url 'home' %}">
+                            <img src="{% static 'blooddonor/images/logo.png' %}" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-2"></div>
+                <div class="col-lg-3 col-sm-5 pr-sm-0 col-12">
+                    <div class="phone_num">
+                        <div class="phone_icon">
+                            <img src="{% static 'blooddonor/images/location.png' %}" alt="">
+                        </div>
+                        <p>
+                            Location- <br> <span>Azimpur, Dhaka</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-7 pr-sm-0 col-12">
+                    <div class="phone_num">
+                        <div class="phone_icon">
+                            <img src="{% static 'blooddonor/images/mail.png' %}" alt="">
+                        </div>
+                        <p>
+                            For Contact- <br> info.iamblooddonor@gmail.com
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="navbar navbar-expand-lg  navbar-light navber_part m-0 p-0">
+        <div class="container nav_bar">
+            <div class="col-lg-4 text-left thumb d-none">
+                <button class="navbar-toggler" id="navbar_toggoler" type="button" data-toggle="" data-target="#navber" aria-controls="navber" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            <div class="col-lg-7 order-lg-1">
+                <div class="collapse navbar-collapse m-0 p-0 " id="navber">
+                    <ul class="navbar-nav  mr-auto">
+                        <li class="nav-item active ">
+                        <a class="nav-link active_class" href="{% url 'home' %}"> Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'about' %}">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'post-list' %}">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'post-list' %}">Campaign News</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'gallery' %}" id="logout">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'contact' %}" id="logout">Contact</a>
+                    </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-5 col-12 order-lg-2 order-2">
+                <div class="Login text-right ">
+                    {% if user.is_authenticated %}
+                    <div class="Login ml-auto">
+                        <a href="{% url 'donor-logout' %}" id="logout">Logout</a>
+                        <a href="{% url 'profile' %}" class="mt-4">Profile</a>
+                    </div>
+
+                </div>
+
+                </div>
+                {% else %}
+                    <div class="Login ml-auto">
+                        <a href="{% url 'donor-login' %}" >Login</a>
+                        <a href="{% url 'register' %}">Register</a>
+                    </div>
+                {% endif %}
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Header part end  -->
+
+    <!--Django Messages Start-->
+    <section style="background:#f7f7f7;">
+        <div class="container" >
+            <div class="row justify-content-center text-center">
+                <div class="col-lg-6 col-md-8 col-12 pt-4 pb-4" id="message" style="height:0px">
+                    {% if messages %}
+                        {% for message in messages %}
+                            <div class="alert alert-{{ message.tags }}">
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </section>
+<!--Django Messages End-->
+
+
+        {% block content %}
+
+        {% endblock content %}
+
+
+
+
+  <!-- footer part start  -->
+<hr>
+    <footer class="contact_part">
+        <div class="container">
+            <div class="row justify-content-start">
+                <div class="col-lg-4 ">
+                    <div class="footer_first_part">
+                        <a class="navbar-brand" href="#">
+                            I'mBloodDonor
+                        </a>
+                        <p>
+                            I'mBloodDonor is a web based blood donation organization that helps you to find blood donor within short time!
+                        </p>
+                        <div class="icon">
+                        <a href="https://www.facebook.com/iambloodonor/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://twitter.com/IamBloodDonor/" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/iamblooddonor/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://github.com/jubayer-hossain" target="_blank"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-5 ">
+                    <div class="footer_2nd_part">
+                        <h4>Contact Us</h4>
+                        <div class="tweet_part">
+                            <div class="row justify-content-start">
+                                <div class="col-lg-1 col-sm-2 col-4">
+                                    <div class="tweet_img">
+                                        <i class="far fa-envelope fa-2x"></i>
+                                    </div>
+                                </div>
+                                <div class="col-lg-10 col-sm-10 col-12">
+                                    <div class="tweet_title">
+                                        <a href="#">info.iamblooddonor@gmail.com</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tweet_part">
+                            <div class="row justify-content-start">
+                                <div class="col-lg-1 col-sm-2">
+                                    <div class="tweet_img">
+                                        <i class="fas fa-phone fa-2x"></i>
+                                    </div>
+                                </div>
+                                <div class="col-lg-10 col-sm-10">
+                                    <div class="tweet_title">
+                                        <a href="#"> +88 01679662864 </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tweet_part">
+                            <div class="row justify-content-start">
+                                <div class="col-lg-1 col-sm-2">
+                                    <div class="tweet_img">
+                                        <i class="fas fa-map-marker-alt fa-2x"></i>
+                                    </div>
+                                </div>
+                                <div class="col-lg-10 col-sm-10">
+                                    <div class="tweet_title">
+                                        Ajimpur,lalbagh,Dhaka-1205
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="address">
+                        <h4>Support Links</h4>
+                    </div>
+                    <div class="contact_left_part">
+                        <a href="https://www.blood.co.uk/who-can-give-blood/" target="_blank" style="color
+:#1b1a1a;">Who can give blood?</a>
+                    </div>
+                    <div class="contact_left_part mt-2">
+                        <a href="https://www.healthline.com/health/thalassemia" target="_blank" style="color
+:#1b1a1a;"> Thalassemia</a>
+                    </div>
+                    <div class="contact_left_part mt-2">
+                        <a href="https://www.redcrossblood.org/donate-blood/blood-donation-process/donation-process-overview.html" target="_blank" style="color
+:#1b1a1a;">Redcrossblood</a>
+                    </div>
+                    <div class="contact_left_part mt-2">
+                        <a href="https://www.healthline.com/health/thalassemia" target="_blank" style="color
+:#1b1a1a;"> Thalassemia</a>
+                    </div>
+                    <div class="contact_left_part mt-2">
+                        <a href="https://www.redcrossblood.org/donate-blood/blood-donation-process/donation-process-overview.html" target="_blank" style="color
+:#1b1a1a;">Redcrossblood</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row footer">
+                <hr>
+                <div class="col-lg-6">
+                    <p>&copy; 2018 - IamBloodDonor.com. All rights reserved</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- footer part end  -->
+
+    <!--! All JS Files-->
+     <script src="{% static 'blooddonor/js/jquery-1.12.4.min.js' %}"></script>
+    <script src="{% static 'blooddonor/js/jquery-migrate-1.2.1.min.js' %}"></script>
+     <script src="{% static 'blooddonor/js/jquery.waypoints.min.js' %}"></script>
+    <script src="{% static 'blooddonor/js/popper.min.js' %}"></script>
+    <script src="{% static 'blooddonor/js/bootstrap.min.js' %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/ScrollToPlugin.min.js"></script>
+    <script src="{% static 'blooddonor/js/script.js' %}"></script>
+    <script src="{% static 'blooddonor/js/slick.min.js' %}"></script>
+
+
+
+</body>
+</html>

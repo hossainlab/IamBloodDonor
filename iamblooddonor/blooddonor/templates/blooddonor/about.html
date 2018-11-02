@@ -1,0 +1,54 @@
+{% extends 'blooddonor/base.html' %}
+{% load static %}
+{% block content %}
+<!-- team part start  -->
+    <section class="team_part">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="about_content text-center">
+                        <img src="{% static 'blooddonor/images/line.png' %}" id="team_line" alt="">
+                        <h2>I'mBloodDonor <span>Team</span></h2>
+                        <img src="{% static 'blooddonor/images/line.png' %}" alt="">
+                        <h4>I'mBloodDonor team works hard for providing an easiest way of searching blood! This is not a commercial project. So feel free to improve this site.<br>
+                        </h4>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center team_slider">
+                <!--  Team one start  -->
+                {% for member in members %}
+                <div class="col-lg-5 col-md-5">
+                    <div class="team_member">
+                        <div class="row">
+                            <div class="col-lg-5 col-sm-6 col-10">
+                                <div class="team_img">
+                                    <img src="{{ member.image.url }}" class="img-fluid" alt="">
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-sm-6 col-12">
+                                <div class="member_details">
+                                    <h2>{{ member.profile_name }}</h2>
+                                    <h3>{{ member.position }}</h3>
+                                    <div class="link_icon">
+                                        <a href="{{ member.facebook_link }}" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                                        <a href="{{ member.instagram_linnk }}" target="_blank"><i class="fab fa-instagram"></i></a>
+                                        <a href="{{ member.twitter_linnk }}" target="_blank"><i class="fab fa-twitter"></i></a>
+                                        <a href="{{ member.linkedin_link }}" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                                        <a href="{{ member.github_link }}" target="_blank"><i class="fab fa-github"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                 <!--  Team one end  -->
+            </div>
+        </div>
+    </section>
+    <!-- team part end  -->
+
+{% endblock content %}
+
+

@@ -1,0 +1,32 @@
+{% extends "blooddonor/base.html" %} 
+{% load static %}
+{% block content %}
+     <section class="galler_part">
+        <div class="container">
+            <div class="row justify-content-end">
+                <div class="col-lg-6">
+                    <div class="about_content text-right">
+                        <img src="{% static 'blooddonor/images/line.png' %} " alt="">
+                        <h2>I'mBloodDonor  <span>Photo Gallery</span></h2>
+                        <h4></h4>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center gallery_slider">
+
+                <!-- gallery image slider start  -->
+                {% for photo in photos %}
+                <div class="col-lg-4">
+                    <div class="gallery_img">
+                        <img src="{{ photo.image.url }}" class="img-fluid" alt="">
+                    </div>
+                </div>
+                {% endfor %}
+                <!-- gallery image slider end  -->
+            </div>
+        </div>
+    </section>
+    <!-- gallery part end   -->
+
+{% endblock content %}
+    

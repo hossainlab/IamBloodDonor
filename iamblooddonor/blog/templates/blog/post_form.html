@@ -1,0 +1,25 @@
+{% extends 'blooddonor/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-12 pt-5 pb-5">
+            <div class="content-section">
+                    <form method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                            <fieldset class="form-group">
+                                <legend class="border-bottom mb-4 text-center">
+                                    <h3 class="py-4">Create Posts</h3>
+                                    <hr>
+                                </legend>
+                                {{ form|crispy}}
+                            </fieldset>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-custom">Post</button>
+                            </div>
+                        </form>
+            </div>
+                </div>
+            </div>
+            </div>
+{% endblock content %}

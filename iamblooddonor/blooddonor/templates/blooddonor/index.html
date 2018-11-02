@@ -1,0 +1,386 @@
+{% extends 'blooddonor/base.html' %}
+{% load static %}
+{% block content %}
+    <!-- Banner part start   -->
+    <section class="banner_part">
+        <div class="container">
+            <div class="row justify-content-start text-left">
+                <div class="col-lg-7">
+                    <div class="banner_content">
+                        <h2>The Best Way For <span>Searching Blood</span> That We Offer</h2>
+                        <h4>You Can Find Any Type Of Blood Groups As Your Need</h4>
+                        <p>I'mBloodDonor is a web based blood donation organization that helps you to find blood donor within short time!</p>
+                        <div class="banner_button">
+                            <p>Sign Up Now</p>
+                            <a href="{% url 'register' %}"><img src="{% static 'blooddonor/images/button-click.png' %}" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Banner part end   -->
+
+    <!-- Blood Groups And About Part Start    -->
+    <section class="about_part">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-5 col-sm-6 order-lg-1 order-2">
+                    <div class="Blood_group">
+                        <div class="about_title">
+                            <img src="{% static 'blooddonor/images/about-title-line.png' %}" id="about_line" alt="">
+                            <h4>Blood Groups</h4>
+                            <img src="{% static 'blooddonor/images/about-title-line.png' %}" alt="">
+                        </div>
+                        <!--Blood Groups-->
+                        <div class="row justify-content-center">
+                            {% for group in groups %}
+                            <div class="col-lg-5 col-5">
+                                <div class="blood_name"><a href="{% url 'donor-list' group.blood_group %}">{{ group.blood_group }} ({{ group.profile_set.count }})</a></div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                <!--End Blood Group-->
+                <div class="col-lg-6 col-sm-10 order-lg-2 order-1">
+                    <div class="about_content">
+                        <h2>Things That <span>Need To Know About I'mBloodDonor</span></h2>
+                        <img src="{% static 'blooddonor/images/line.png' %}" alt="">
+                        <h3 class="text-center pt-2">
+                            --Daily Updates--
+                        </h3>
+                        {% for news in all_news %}
+                        <div class="justify-content-center">
+                            <p class="pt-2">{{ news.news_text }}</p>
+                            <h4 class="mx-5">-{{ news.name }}</h4>
+
+                             <p></p>
+                        </div>
+                        {% endfor %}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- about part end    -->
+
+    <!-- Donation Process part start   -->
+    <section class="process_part">
+        <div class="container">
+            <div class="row justify-content-center heading">
+                <div class="col-lg-4">
+                    <p>
+                        Donate Blood, Save Life <br>
+                        <span>
+                           Become A Donor
+                       </span>
+                    </p>
+                </div>
+            </div>
+            <div class="row justify-content-center text-center">
+                <div class="col-lg-3 col-sm-6">
+                    <div class="process_content">
+                        <div class="process_icon">
+                            <img src="{% static 'blooddonor/images/note.png' %}" alt="">
+                        </div>
+                        <h2>Registration</h2>
+                        <img src="{% static 'blooddonor/images/right-arrow.png' %}" id="arrow" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="process_content">
+                        <div class="process_icon">
+                            <img src="{% static 'blooddonor/images/login.png' %}" alt="">
+                        </div>
+                        <h2>Login </h2>
+                        <img src="{% static 'blooddonor/images/right-arrow.png' %}" class="d-lg-block d-sm-none" id="arrow" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="process_content">
+                        <div class="process_icon">
+                            <img src="{% static 'blooddonor/images/man-user.png' %}" alt="">
+                        </div>
+                        <h2>Create Profile</h2>
+                        <img src="{% static 'blooddonor/images/right-arrow.png' %}" id="arrow" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="process_content">
+                        <div class="process_icon">
+                            <img src="{% static 'blooddonor/images/refresh.png'%} " alt="">
+                        </div>
+                        <h2>Update Profile</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Donation Process part end   -->
+
+    <!-- Purpose part start   -->
+    <section class="purpose_part">
+        <div class="container">
+            <div class="row justify-content-start text-left">
+                <div class="col-lg-6">
+                    <div class="about_content">
+                        <h2>Emergency Blood Request <span>Messages</span></h2>
+                        <img src="{% static 'blooddonor/images/line.png' %}" alt="">
+                        <h4>
+                           Click Request Button And Send- <br> Name | Blood Group | Amount of Blood | Location | Contact
+                        </h4>
+                    </div>
+
+                    <div class="purpose_item">
+                        <div class="row">
+                            {% for request in blood_requests %}
+                            <div class="col-lg-2">
+                                <div class="pur_image">
+                                    <img src="{% static 'blooddonor/images/bloodreq.png' %}" alt="">
+                                </div>
+                            </div>
+                            <div class="col-lg-9">
+                                <div class="title_item">
+                                    <h2>{{ request.name }}</h2>
+                                    <p>{{ request.text }}</p>
+                                </div>
+                            </div>
+                            {% endfor %}
+                            <div class="col-lg-3 text-center">
+                    <div class="blog_post">
+                        <a href="{% url 'blood-request' %}">Request</a>
+                    </div>
+                        </div>
+                    </div>
+
+                </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- Purpose part end   -->
+
+
+
+    <!-- testimonial part start   -->
+    <section class="testimonial_part">
+        <div class="container">
+            <div class="row justify-content-end">
+                <div class="col-lg-6">
+                    <div class="testimonial_content">
+                        <h2>See What People Say About Us</h2>
+                        <img src="{% static 'blooddobor/images/line-white.png' %}" alt="">
+                        <div class="test--img mt-4">
+                            <img src="{% static 'blooddonor/images/comma.png' %}" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-end ">
+                <div class="col-lg-6">
+                    <div class="testimonial_slider">
+                        {% for opinion in opinions %}
+                        <!-- testimonal slider start -->
+                        <div class="col-lg-12">
+                            <div class="testimonial_content">
+                                <p class="pt-5 pb-3">{{ opinion.text }}</p>
+
+                                <div class="author text-right">
+                                    <h3>{{ opinion.name }}</h3>
+                                    <h4>{{ opinion.position }}</h4>
+                                </div>
+                            </div>
+                        </div>
+                           {% endfor %}
+                        <!-- testimonal slider end -->
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6"></div>
+                <div class="col-lg-3">
+                    <div class="testimonial_opinion">
+                        <a href="{% url 'opinion' %}">Give Your Opinion</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- testimonial part end   -->
+
+
+    <!-- blog part start  -->
+    <section class="blog_part">
+        <div class="container">
+            <div class="row justify-content-start">
+                <div class="col-lg-6">
+                    <div class="about_content">
+                        <h2>Our Blog <span>Posts & Campaign News</span></h2>
+                        <img src="{% static 'blooddonor/images/line.png' %}" alt="">
+                        <h4>You can write blog post and arrange donor campaigns. <br> If you want join with us as a volunteer. Please send a
+                            <a href="{% url 'contact' %}" class="text-info">Contact</a> message. </h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row justify-content-center mt-5 pt-5">
+                {% for post in posts %}
+                <div class="col-lg-5">
+                    <div >
+                        <div class="blog_img">
+                            <img src="{{ post.featured_image.url }}" class="img-fluid" alt="">
+                            <img src="{% static 'blooddonor/images/textture.png' %}" class="img-fluid" id="blog_texture" alt="">
+                        </div>
+                        <div class="blog_content text-left">
+                            <h2>
+                                {{ post.title }}
+                            </h2>
+                            <p class="blog_post">By {{ post.author }}| {{ post.posted_on }}| 26 Comments| Views({{ post.view_count }})</p>
+                            <p>{{ post.content|safe|truncatewords:30 }}</p>
+                            <div class="banner_button ">
+                                <p>Read More</p>
+                                <a href="{% url 'post-detail' post.id %}"><img src="{% static 'blooddonor/images/button-click.png' %}" alt=""></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                <div class="col-lg-3 text-center">
+                    <div class="blog_post">
+                        <a href="{% url 'post-list' %}">See All Posts</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- blog part end  -->
+
+
+        <!-- gallery part start   -->
+    <section class="galler_part">
+        <div class="container">
+            <div class="row justify-content-end">
+                <div class="col-lg-6">
+                    <div class="about_content text-right">
+                        <img src="{% static 'blooddonor/images/line.png' %} " alt="">
+                        <h2>I'mBloodDonor  <span>Photo Gallery</span></h2>
+                        </h4>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center gallery_slider">
+
+                <!-- gallery image slider start  -->
+                {% for photo in photos %}
+                <div class="col-lg-4">
+                    <div class="gallery_img">
+                        <img src="{{ photo.image.url }}" class="img-fluid" alt="">
+                    </div>
+                </div>
+                {% endfor %}
+                <!-- gallery image slider end  -->
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-3 text-center">
+                    <div class="blog_post">
+                        <a href="{% url 'photo-upload' %}">Uplod Photo</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- gallery part end   -->
+
+
+    <!-- team part start  -->
+    <section class="team_part">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="about_content text-center">
+                        <img src="{% static 'blooddonor/images/line.png' %}" id="team_line" alt="">
+                        <h2>I'mBloodDonor <span>Team</span></h2>
+                        <img src="{% static 'blooddonor/images/line.png' %}" alt="">
+                        <h4>I'mBloodDonor team works hard for providing an easiest way of searching blood! This is not a commercial project. So feel free to improve this site.<br>
+                        </h4>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center team_slider">
+                <!--  Team one start  -->
+                {% for member in members %}
+                <div class="col-lg-5 col-md-5">
+                    <div class="team_member">
+                        <div class="row">
+                            <div class="col-lg-5 col-sm-6 col-10">
+                                <div class="team_img">
+                                    <img src="{{ member.image.url }}" class="img-fluid" alt="">
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-sm-6 col-12">
+                                <div class="member_details">
+                                    <h2>{{ member.profile_name }}</h2>
+                                    <h3>{{ member.position }}</h3>
+                                    <div class="link_icon">
+                                        <a href="{{ member.facebook_link }}" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                                        <a href="{{ member.instagram_linnk }}" target="_blank"><i class="fab fa-instagram"></i></a>
+                                        <a href="{{ member.twitter_linnk }}" target="_blank"><i class="fab fa-twitter"></i></a>
+                                        <a href="{{ member.linkedin_link }}" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                                        <a href="{{ member.github_link }}" target="_blank"><i class="fab fa-github"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                 <!--  Team one end  -->
+            </div>
+        </div>
+    </section>
+    <!-- team part end  -->
+
+<!--Connected Organization Start-->
+    <section class="team_part" style="background:#f7f7f7;">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="about_content text-center">
+                        <img src="{% static 'blooddonor/images/line.png' %}" id="team_line" alt="">
+                        <h2>Connected <span>Blood Donation Organizations & Sponsors</span></h2>
+                        <img src="{% static 'blooddonor/images/line.png' %}" alt="">
+                        <h4>Connect your blood donation organization. <br> To Support Us <a href="{% url 'contact' %}" class="text-info">Contact</a> With Our Team!</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center gallery_slider_s">
+                <!--  Team one start  -->
+                {% for organization in organizations %}
+                <div class="col-lg-2 col-md-3">
+                    <div class="team_member">
+                        <div class="row">
+                            <div class="col-lg-12 col-sm-6 col-12">
+                                <div class="member_details">
+                                    <img src="{{ organization.logo.url }}" class="img-fluid" alt="">
+                                    <h2 class="mt-2 text-center">{{ organization.join_as }}</h2>
+                                    <div class="link_icon text-center">
+                                        <a href="{{ organization.web_link }}" target="_blank"><i class="fas fa-globe"></i></a>
+                                        <a href="{{ organization.facebook_link }}" target="_blank"><i class="fab fa-facebook-f"></i></a>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                 <!--  Team one end  -->
+            </div>
+        </div>
+    </section>
+<!--Connected Organization End-->
+{% endblock content %}
+

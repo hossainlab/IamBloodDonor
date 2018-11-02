@@ -1,0 +1,54 @@
+{% extends 'blooddonor/base.html' %}
+{% block content %}
+      <section class="table_header_div">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="table_header text-center">
+                        <h1>({{ bgname }}) Blood Donor List</h1>
+                        <form class="form-inline">
+                            <div class="form-group contact-form-block">
+                                <input type="search" class="form-control inp-custom" id="search_location" name="q" placeholder="Search By Location" data-msg="Please Search By Location" />
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-custom">Search</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="blood_group_table">
+    <div class="container">
+        <table class="table table-bordered">
+        <thead class="thead-light">
+        <tr>
+            <th>SL</th>
+            <th>Name</th>
+            <th>Location</th>
+            <th>Phone</th>
+            <th>Institute</th>
+            <th>Last Donation Date</th>
+            <th>Donation Capability</th>
+            <th>Action</th>
+
+        </tr>
+        {% for donor in donors %}
+            <tr  class="text-success text-center">
+                <td>{{forloop.counter}}</td>
+                <td>{{ donor.name }}</td>
+                <td>{{ donor.location }}
+                <td>{{ donor.phone }}</td>
+                <td>{{ donor.institute }}</td>
+                <td>{{ donor.last_donation_date }}</td>
+                <td>{{ donor.donation_capability }}</td>
+                <td><a href="{% url 'donor-detail' donor.id %}" class="btn btn-success">View Detail</a></td>
+            </tr>
+        {% endfor %}
+        </thead>
+    </table>
+        {% include 'blooddonor/pagination.html' %}
+    </div>
+</section>
+{% endblock content %}

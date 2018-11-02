@@ -1,0 +1,80 @@
+{% extends 'blooddonor/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6 col-12 pt-5 pb-5">
+      <div class="content-section">
+        <div class="media">
+          <img class="rounded-circle account-img" src="{{ donor.image.url }}">
+          <div class="media-body">
+            <h3 class="account-heading" >{{ donor.name }}</h3>
+            <p class="text-secondary">{{ donor.occupation }} at {{ donor.institute }}</p>
+          </div>
+        </div>
+        <!-- Table Here -->
+        <table class="table table-bordered justify-content-center">
+           <tr class="text-center">
+              <td>Date Of Birth</td>
+              <td>{{ donor.date_of_birth }}</td>
+           </tr>
+
+            <tr class="text-center">
+              <td>Weight</td>
+              <td>{{ donor.weight }}</td>
+           </tr>
+
+          <tr class="text-center">
+              <td>Blood Group</td>
+              <td>{{ donor.blood_group }}</td>
+           </tr>
+          <tr class="text-center">
+              <td>Last Blood Donation Date</td>
+              <td>{{ donor.last_donation_date }}</td>
+           </tr>
+          <tr class="text-center">
+              <td>Last Blood Donation Place</td>
+              <td>{{ donor.last_donation_place }}</td>
+           </tr>
+          <tr class="text-center">
+              <td>Able To Donate Blood?</td>
+              <td>{{ donor.donation_capability }}</td>
+           </tr>
+
+          <tr class="text-center">
+              <td>How Many Times Donate Blood?</td>
+              <td>{{ donor.donation_times }}</td>
+           </tr>
+          <tr class="text-center">
+              <td>Contact Number</td>
+              <td>{{ donor.phone }}</td>
+           </tr>
+
+          <tr class="text-center">
+              <td>Social Link</td>
+              <td><a href="{{ donor.facebook_link }}" target="_blank"><i class="fab fa-facebook fa-2x"></i></a></td>
+           </tr>
+        </table>
+
+
+        {% if request.user.username == donor.user.username %}
+        <div class="border-top pt-3">
+          <p class="text-muted text-center">
+              <button type="button" class="btn btn-success"><a href="{% url 'edit-profile' %}" class="pro-link">Update</a></button>
+              <button type="button" class="btn btn-danger"><a href="{% url 'delete-profile' donor.id%}" class="pro-link">Delete</a></button>
+          </p>
+        </div>
+        {% endif %}
+
+
+</div>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}
+
+
+
+
+

@@ -1,0 +1,21 @@
+{% extends "blooddonor/base.html" %}
+{% block content %}
+   <div class="container">
+       <div class="row justify-content-center">
+           <div class="col-md-8 col-12 pt-5 pb-5">
+                <div class="content-section">
+                    <form method="POST">
+                        {% csrf_token %}
+                        <fieldset class="form-group">
+                            <h2>You Don't Have Any Profile. Please Create Your Profile By Clicking Create Button</h2>
+                        </fieldset>
+                        <div class="form-group">
+                            <a class="btn btn-custom" href="{% url 'add-donor' %}">Create</a>
+                        </div>
+                    </form>
+                </div>
+           </div>
+       </div>
+   </div>
+
+{% endblock content %}

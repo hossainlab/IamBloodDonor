@@ -1,0 +1,51 @@
+{% extends 'blooddonor/base.html' %}
+{% load static %}
+{% block content %}<section class="blog_part">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-lg-6">
+                    <div class="about_content">
+                        <h2>Our Blog <span>Posts & Campaign News</span></h2>
+                        <img src="{% static 'blooddonor/images/line.png' %}" alt="">
+                        <h4>You can write blog post and arrange donor campaigns. <br> If you want join with us as a volunteer. Please send a
+                            <a href="{% url 'contact' %}" class="text-info">Contact</a> message. </h4>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="add_post_btn text-right">
+                        {% if user.is_authenticated %}
+                            <a href="{% url 'post-create' %}" id="logout">Create Post  <i class="fas fa-plus"></i></a>
+
+                         {% endif %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="row justify-content-center mt-5">
+                {% for post in posts %}
+                <div class="col-lg-5">
+                    <div>
+                        <div class="blog_img">
+                            <img src="{{ post.featured_image.url }}" class="img-fluid" alt="">
+                            <img src="{% static 'blooddonor/images/textture.png' %}" class="img-fluid" id="blog_texture" alt="">
+                        </div>
+                        <div class="blog_content text-left">
+                            <h2>
+                                {{ post.title }}
+                            </h2>
+                            <p class="blog_post">By {{ post.author }}| {{ post.posted_on }}| 26 Comments| Views({{ post.view_count }})</p>
+                            <p>{{ post.content|safe|truncatewords:30 }}</p>
+                            <div class="banner_button">
+                                <p>Read More</p>
+                                <a href="{% url 'post-detail' post.id %}"><img src="{% static 'blooddonor/images/button-click.png' %}" alt=""></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    <!-- blog part end  -->
+
+{% endblock content %}

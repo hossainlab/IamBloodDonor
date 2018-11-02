@@ -1,0 +1,31 @@
+{% extends 'blooddonor/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6 col-12 pt-5 pb-5">
+            <div class="content-section">
+                    <form method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                            <fieldset class="form-group">
+                                <legend class="border-bottom mb-4 text-center">
+                                    <h3 class="py-4">Login</h3>
+                                    <hr>
+                                </legend>
+                                {{ form|crispy}}
+                            </fieldset>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-custom">Login</button>
+                            </div>
+                        </form>
+                <div class="border-top pt-3">
+                    <p class="text-muted">
+                        Need An Account? <a class="ml-2" href="{% url 'register' %}">Sign Up</a>
+                    </p>
+                </div>
+
+            </div>
+                </div>
+            </div>
+            </div>
+{% endblock content %}

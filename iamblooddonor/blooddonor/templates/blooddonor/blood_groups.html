@@ -1,0 +1,32 @@
+{% extends "blooddonor/base.html" %}
+{% block content %}
+     <!--BLOOD GROUPS BLOCK START  -->
+    <section class="cta-section-1">
+        <div class="container">
+            <div class="row justify-content-between">
+                 <div class="col-md-8">
+                     <h2 class="text-center">Instructions</h2>
+                      <ul class="list-group">
+                            <li class="list-group-item list-group-item-light">Latest Posts</li>
+                            <li class="list-group-item list-group-item-light">Announcements</li>
+                            <li class="list-group-item list-group-item-light">Calendars</li>
+                            <li class="list-group-item list-group-item-light">etc</li>
+                      </ul>
+                 </div>
+                <div class="col-md-4">
+                    <h2 class="section-heading text-center">Blood Groups</h2>
+
+                   <table class="table table-bordered table-hover ">
+                    <thead>
+                    {% for group in groups %}
+                        <tr class="text-center">
+                            <td class="table-bg"> <a href="{% url 'donor-list' group.blood_group%}">Number of {{ group.blood_group }} Blood Donor({{ group.profile_set.count }})</a></td>
+                        </tr>
+                    {% endfor %}
+                    </thead>
+                </table>
+                </div>
+                </div>
+            </div>
+    </section>
+{% endblock content %}

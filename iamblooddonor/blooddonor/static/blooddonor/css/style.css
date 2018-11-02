@@ -1,0 +1,1149 @@
+/*=====================
+------------------
+Template Name: Authentic Coder - Portfolio HTML Template
+Author: Themephilic
+Version: 1.00
+
+------------------
+
+----------------
+Table of Content
+----------------
+1. head part
+2. about part
+3. services part
+4. pricing part
+5. bolg part
+6. contact part
+7. footer part
+
+
+=======================*/
+/*====================================================*/
+/*                  Importing URL's                   */
+/*====================================================*/
+
+/*    fonts css    */
+
+
+@import url("https://fonts.googleapis.com/css?family=Fira+Sans:100,200,300,400,500,600,700,800,900");
+
+
+@import url("https://fonts.googleapis.com/css?family=Kaushan+Script");
+
+/*   bootstrap css   */
+
+@import url('../css/bootstrap.min.css');
+
+/*   font-aweasome css  */
+
+@import url('../css/fontawesome-all.min.css');
+
+/*   animation css  */
+
+@import url('../css/animate.css');
+
+/*   slick css   */
+
+@import url('../css/slick.css');
+
+
+
+
+/*====================================================*/
+/*                  Common CSS                        */
+/*====================================================*/
+
+* {
+    margin: 0px;
+    padding: 0;
+}
+
+a,
+a:hover {
+    text-decoration: none
+}
+
+ol,
+ul {
+    list-style-type: none;
+}
+
+body {
+    font-family: 'Fira Sans', sans-serif;
+    position: relative;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    padding: 0;
+    margin: 0;
+}
+
+h2 {
+    
+}
+
+h3 {
+    
+  
+}
+
+h4 {
+    font-size: 32px;
+}
+
+h5 {
+    font-weight: 500;
+    font-size: 20px; 
+}
+
+p {    
+    
+    font-size: 16px;
+    
+}
+
+
+/*====================================================*/
+/*             All multiple class CSS                 */
+/*====================================================*/
+
+{
+    transform: scale(0);
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    -mz-transform: scale(0);
+    -o-transform: scale(0);
+}
+
+
+{
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -mz-transform: scale(1);
+    -o-transform: scale(1);
+}
+
+{
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    -mz-transform: translateX(-50%);
+}
+
+
+{
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    -mz-transform: translateY(-50%);
+}
+
+
+.load{
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    -mz-transform: translate(-50%, -50%);
+}
+
+
+.footer_first_part .icon i,
+.link_icon a i,
+#navber ul li a,
+.blog_post a,
+.navber_part.menufix ,
+.button img{
+    transition: all linear .4s;
+    -webkit-transition: all linear .4s;
+    -moz-transition: all linear .4s;
+    -o-transition: all linear .4s;
+    -mz-transition: all linear .4s;
+}
+
+
+/*====================================================*/
+/*                  All color CSS                     */
+/*====================================================*/
+
+{
+    background-color: #ffffff;
+}
+
+{
+    color: #ffffff;
+}
+
+
+.button a{
+    color: #2d2929;
+}
+
+.button a{
+    background-color: #ecdbdb;
+}
+
+.navbar ul li a,
+.rotating_text p,
+.banner_container p,
+.banner_container h3,
+.banner_doted_item h4{
+    color: #b4b1b1;
+}
+
+
+/*====================================================*/
+/*           Header part CSS start                    */
+/*====================================================*/
+
+.greeting p{
+    font-weight: 300;
+    font-size: 16px;
+    color: #1b1a1a;
+}
+
+.footer_first_part .icon i,
+.link_icon a i{
+    font-size: 20px;
+    padding-right: 15px;
+    color: #ff2635;
+}
+
+
+.footer_first_part .icon i:hover,
+.link_icon a i:hover{
+    color: #1b1a1a;
+}
+
+.greeting,
+.link_icon{
+    padding: 10px 0px 0px 0px;
+}
+
+header{
+    background-image: url('../images/header-bg.png');
+    background-position: center;
+    background-size: cover;
+}
+
+.sub_nav{
+    position: relative;
+}
+
+.sub_nav img{
+    position: absolute;
+    left: 0;    
+    top: 0;
+}
+
+.logo a img{
+    width: 100%;
+    padding: 15px 0px;
+}
+
+.phone_num{
+    margin-top: 20px;
+}
+.phone_num p,
+.phone_num .phone_icon{
+    display: inline-block;
+}
+
+
+.phone_num p span{
+    font-weight: 500;
+}
+.phone_num p{
+    margin-top: 10px;
+    padding-left: 15px;
+}
+.phone_num .phone_icon img {
+    width: 50px;
+    height: 50px;
+    border: 1px dashed #1b1a1a;
+    border-radius: 50%;
+    padding: 10px;
+    margin-top: -25px;
+}
+
+.navber_part{
+    background-image: url('../images/nav_bg.png');
+    background-position: center;
+    background-size: cover;
+}
+
+.navber_part.menufix {
+    width: 100%;
+    position: fixed;
+    background-color: crimson;
+    z-index: 99;
+    top: 0;
+    
+}
+
+#navber ul li{
+    margin: 5px 0px;
+}
+
+#navber ul li a{
+    font-size: 20px;
+    color: #fff;
+    font-weight: 400;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 15px;
+}
+
+
+#navber ul li:hover a{
+    color: rgba(255,255,255,.6);
+}
+
+.Login a:nth-child(2){
+    margin-left: 7px;
+}
+.Login a:nth-child(3){
+    margin-left: 7px;
+}
+.Login a{
+    font-size: 20px;
+    color: crimson;
+    background: #fff;
+    padding: 7px 20px;
+    border-radius: 5px;
+}
+
+
+
+
+/*====================================================*/
+/*           Header part CSS end                      */
+/*====================================================*/
+
+
+/*====================================================*/
+/*           banner part CSS start                    */
+/*====================================================*/
+
+
+.banner_part{
+    background-color: #f7f7f7;
+    background-image: url('../images/banner_img.png');
+    background-position: right 117px;
+    background-size: auto;
+    background-repeat: no-repeat;
+}
+
+.banner_content h2 span{
+    color: crimson;
+}
+
+
+.banner_content{
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+.banner_content h2{
+    font-size: 40px;
+    font-weight: 700;
+    color: #1b1a1a;
+}
+
+
+.banner_content h4{
+    font-size: 24px;
+    font-weight: 500;
+    color: #1b1a1a;
+}
+
+
+.banner_content p{
+    padding: 15px 0px;
+}
+
+.banner_button {
+    background-image: url('../images/button-bg.png');
+    background-position: center;
+    background-size: auto;
+    background-repeat: no-repeat;
+    width: 230px;
+    height: 60px;
+    position: relative;
+}
+
+
+.banner_button p{
+    font-size: 20px;
+    font-weight: 500;
+    color: #f7f7f7;
+    text-align: center;
+}
+
+
+.banner_button a{
+    position: absolute;
+    right:-5px;
+    top: 10px;
+}
+
+
+/*====================================================*/
+/*           banner part CSS end                      */
+/*====================================================*/
+
+
+/*====================================================*/
+/*           About part CSS start                      */
+/*====================================================*/
+
+
+
+
+
+.about_part{
+    padding: 100px 0px;
+}
+
+.about_title img, 
+.about_title h4{
+    display: inline;
+} 
+
+.about_title h4{
+    font-size: 24px;
+    font-weight: 400;
+    color: #fff;
+    padding: 0px 10px;
+    margin-top: 2px;
+}
+
+.about_title img{
+    margin-top: -6px;
+}
+
+
+.about_title{
+    padding-top: 35px;
+    padding-bottom: 15px;
+}
+
+
+.about_title #about_line{
+    transform: rotate(180deg);
+}
+
+.Blood_group{
+    width: 350px;
+    height: 350px;
+    border-radius: 7px;
+    background-color: #BF3636;
+    text-align: center;
+}
+
+.blood_name a{
+    display: block;    
+    color: #BF3636;
+}
+
+
+.blood_name {
+    background: #fff;
+    border-radius:4px;
+    margin-top: 20px;
+    font-size: 20px;
+    padding: 3px 0px;
+}
+
+
+.about_content{
+    background-image: url('../images/heart-shape.png');
+    background-position: center;
+    background-size: auto;
+    background-repeat: no-repeat;
+}
+
+.about_content h2,
+.about_content img{
+    display: inline;
+}
+
+.about_content{
+    height: 300px;
+}
+
+
+.about_content h2 span{
+    color: crimson;
+}
+
+
+.about_content h2{
+    font-size: 30px;
+    font-weight: 500;
+    color: #1b1a1a;
+    padding-right: 15px;
+}
+
+
+.about_content h4{
+    font-size: 20px;
+    font-weight: 500;
+    color: #1b1a1a;
+    margin-top: 10px;
+}
+
+
+/*====================================================*/
+/*           About part CSS end                      */
+/*====================================================*/
+
+
+/*====================================================*/
+/*           process part CSS start                      */
+/*====================================================*/
+
+
+
+.process_part{
+    background-color: #f7f7f7;
+    padding: 100px 0px;
+}
+
+.process_icon img{
+    width: 50%;
+}
+.process_icon{
+    width: 120px;
+    height: 120px;
+    border: 2px solid rgba(0,0,0,0.7);
+    border-radius: 50%;
+    line-height: 120px;
+    margin-left: 24%;
+}
+
+.process_content{
+    position: relative;
+}
+.process_content #arrow{
+    width: 20%;
+    position: absolute;
+    right: -36px;
+    top: 25%;
+}
+
+.process_content h2{
+    font-size: 24px;
+    font-weight: 500;
+    color: #1b1a1a;
+    padding: 15px 0px 10px 0px;
+}
+
+.heading p span{
+    font-family: 'Kaushan Script', cursive;
+}
+.heading p{
+    font-size: 30px;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+
+/*====================================================*/
+/*           process part CSS end                      */
+/*====================================================*/
+
+
+
+/*====================================================*/
+/*           purpose part CSS start                      */
+/*====================================================*/
+
+.purpose_part{
+    background-image: url('../images/blood-fonate.png');
+    background-position: right 0px;
+    background-size: 700px;
+    padding: 100px 0px;
+    background-repeat: no-repeat;
+    position: relative;
+    background-color: #f7f7f7;
+}
+
+
+.purpose_part .play_button{
+    position: absolute;
+    top: 55%;
+    left: 50%;
+}
+
+
+.purpose_part .about_content {
+    background-image: none;
+    height: 140px;
+}
+.purpose_item .pur_image img{
+    width: 100%;
+}
+
+.purpose_item .title_item h2{
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 12px;
+}
+.purpose_item .title_item,
+.purpose_item .pur_image{
+    display: inline-block;
+}
+
+.purpose_item {
+	margin-top: 40px;
+}
+
+
+
+/*====================================================*/
+/*           purpose part CSS end                      */
+/*====================================================*/
+
+
+/*====================================================*/
+/*           Testimonial part CSS start                      */
+/*====================================================*/
+
+.testimonial_part{
+    background-image: url('../images/testimonial.png');
+    background-position: center;
+    background-size: cover;
+    padding: 100px 0px;
+}
+
+
+.testimonial_content h2{
+    font-size: 30px;
+    color: #fff;
+}
+
+
+.testimonial_content p{
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    font-style: italic;
+}
+
+
+.testimonial_content h2,
+.testimonial_content img{
+    display: inline-block;
+}
+
+.author h3{
+    font-size: 20px;
+    font-weight: 400;
+    color:#fff;
+}
+
+.author h4{
+    font-size: 14px;
+    font-weight: 400;
+    color:#fff;
+}
+
+
+.testimonial_opinion a{
+    color: #BF3636;  
+    font-size: 20px;
+    background: #fff;
+    border-radius: 6px;
+    padding: 7px 25px;
+    display: inline-block;
+    margin-top: 35px;
+    margin-left: 10px;
+}
+
+
+/*====================================================*/
+/*           Testimonial part CSS end                      */
+/*====================================================*/
+
+
+
+/*====================================================*/
+/*           blog part CSS start                      */
+/*====================================================*/
+
+ 
+.blog_part .about_content{
+    background-image: none;
+    height: 140px;
+}
+.blog_part{
+    padding: 100px 0px;
+}
+
+.blog_img img{
+
+    border-radius:10px;
+}
+.blog_img #blog_texture{
+    position: absolute;
+    left: 6%;
+    bottom: 8%;
+    z-index: -4;
+    display:none;
+}
+.blog_img{
+    position: relative;
+}
+.blog_img {
+	margin-top: 65px;
+}
+.blog_content{
+    margin-top: 20px;
+}
+.blog_content p{
+    font-size: 16px;
+    padding-right: 40px;
+}
+.blog_content .blog_post{
+    font-size: 16px;
+    font-weight: 300;
+}
+.blog_content .banner_button{
+    margin-left: -10px;
+}
+.blog_content .banner_button a{
+    right: 10px;
+}
+.blog_content .banner_button p{
+    font-size: 20px;
+    margin: 0px 0px 0px 40px;
+    padding-top: 10px;
+}
+.blog_content .banner_button{
+    background-size: 170px;
+}
+.blog_content h2{
+    font-size: 22px;
+    font-weight: 500;
+    color: #1b1a1a;
+}
+
+.blog_post a{
+    color: #BF3636;
+    font-size: 18px;
+    border: 1px solid #BF3636;
+    border-radius: 5px;
+    padding: 7px 25px;
+    display: inline-block;
+    margin-top: 80px;
+}
+
+
+.blog_post a:hover{
+    color: #fff;
+    background: #BF3636;    
+    border: 1px solid #BF3636;
+}
+/*====================================================*/
+/*           blog part CSS end                      */
+/*====================================================*/
+
+
+
+
+/*====================================================*/
+/*           blog part CSS end                      */
+/*====================================================*/
+
+.galler_part .about_content h2{
+    padding-left: 20px;
+    padding-right: 0;
+}
+.galler_part .about_content{
+    background-image: none;
+    height: 150px;
+}
+.galler_part .about_content img{
+    transform: rotate(180deg);
+}
+.galler_part{
+    padding: 100px 0px;;
+    background: #f7f7f7;
+}
+
+.gallery_img img{
+    border-radius: 5px;
+}
+.gallery_img img{
+    width: 100%;
+}
+
+
+/*====================================================*/
+/*           blog part CSS end                      */
+/*====================================================*/
+
+
+
+
+/*====================================================*/
+/*           blog part CSS end                      */
+/*====================================================*/
+
+.team_part{
+    padding: 100px 0px;
+}
+
+.team_part .about_content h2{
+    padding-left: 15px;
+}
+.team_part .about_content #team_line{
+    transform: rotate(180deg);
+}
+.team_part .about_content{
+    background-image: none;
+    height: 150px;
+}
+
+.team_member .member_details{
+    margin-top:55px;
+}
+.team_member .member_details h2{
+    font-size: 22px;
+}
+.team_member .member_details h3{
+    font-size: 18px;
+    font-weight: 400;
+}
+.team_member .team_img img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+/*====================================================*/
+/*           blog part CSS end                      */
+/*====================================================*/
+
+
+
+
+/*====================================================*/
+/*           blog part CSS end                      */
+/*====================================================*/
+
+.contact_part{
+    padding: 100px 0px;
+}
+
+footer .navbar-brand {
+    font-size: 24px;
+    font-weight: 500;
+    color: #1b1a1a;
+}
+
+
+.footer_2nd_part{
+        margin-left: 35px;
+    margin-right: -35px;
+
+}
+.address h4,
+.footer_2nd_part h4{
+    font-size: 24px;
+    text-transform: capitalize;
+    
+    font-weight: 400;
+}
+.address h4{
+    margin-bottom: 15px;
+}
+.tweet_img,
+.tweet_title{
+    float: left;
+}
+.tweet_img{
+    width: 80px;
+}
+.tweet_title {
+	width: 80%;
+	margin-left: 15px;
+}
+
+.tweet_title a{
+    color: #1b1a1a;
+}
+
+.tweet_part {
+	margin-top: 22px;
+}
+
+.tweet_part{
+    width: 100%;
+    height: 55px;
+}
+
+footer .contact_left_part h3{
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 400;
+}
+.footer {
+    margin-top: 50px;
+}
+.footer hr{
+    background: rgba(0,0,0,0.15);
+    width: 100%;
+}
+
+.tweet_part {
+	width: 100%;
+	height: 30px;
+}
+.footer_2nd_part h4{
+    font-weight:500;
+}
+
+hr {
+	/* margin-top: 1rem; */
+	/* margin-bottom: 1rem; */
+	border: 0;
+	border-top: 1px solid rgba(0,0,0,.1);
+	margin-top: 1px;
+}
+
+
+/*  add post button */
+
+.add_post_btn i{
+    color:#fff;
+    font-size:16px;
+}
+.add_post_btn a{
+    color:#fff;
+    background:crimson;
+    font-size:22px;
+    border-radius:30px;
+    padding:10px 25px;
+}
+
+/*====================================================*/
+/*           blog part CSS end                      */
+/*====================================================*/
+
+
+
+
+
+/*     preloader start   */
+
+.Pre_loader{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    background-color: #fff;
+    width: 100%;
+    height: 750px;
+}
+.loader {
+  color:#BF3636;
+  font-size: 90px;
+  text-indent: -9999em;
+  overflow: hidden;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  margin: 72px auto;
+  position: relative;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-animation: load6 1.7s infinite ease, round 1.7s infinite ease;
+  animation: load6 1.7s infinite ease, round 1.7s infinite ease;
+    position: absolute;
+    top: 30%;
+    left: 45%;
+}
+@-webkit-keyframes load6 {
+  0% {
+    box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+  }
+  5%,
+  95% {
+    box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+  }
+  10%,
+  59% {
+    box-shadow: 0 -0.83em 0 -0.4em, -0.087em -0.825em 0 -0.42em, -0.173em -0.812em 0 -0.44em, -0.256em -0.789em 0 -0.46em, -0.297em -0.775em 0 -0.477em;
+  }
+  20% {
+    box-shadow: 0 -0.83em 0 -0.4em, -0.338em -0.758em 0 -0.42em, -0.555em -0.617em 0 -0.44em, -0.671em -0.488em 0 -0.46em, -0.749em -0.34em 0 -0.477em;
+  }
+  38% {
+    box-shadow: 0 -0.83em 0 -0.4em, -0.377em -0.74em 0 -0.42em, -0.645em -0.522em 0 -0.44em, -0.775em -0.297em 0 -0.46em, -0.82em -0.09em 0 -0.477em;
+  }
+  100% {
+    box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+  }
+}
+@keyframes load6 {
+  0% {
+    box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+  }
+  5%,
+  95% {
+    box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+  }
+  10%,
+  59% {
+    box-shadow: 0 -0.83em 0 -0.4em, -0.087em -0.825em 0 -0.42em, -0.173em -0.812em 0 -0.44em, -0.256em -0.789em 0 -0.46em, -0.297em -0.775em 0 -0.477em;
+  }
+  20% {
+    box-shadow: 0 -0.83em 0 -0.4em, -0.338em -0.758em 0 -0.42em, -0.555em -0.617em 0 -0.44em, -0.671em -0.488em 0 -0.46em, -0.749em -0.34em 0 -0.477em;
+  }
+  38% {
+    box-shadow: 0 -0.83em 0 -0.4em, -0.377em -0.74em 0 -0.42em, -0.645em -0.522em 0 -0.44em, -0.775em -0.297em 0 -0.46em, -0.82em -0.09em 0 -0.477em;
+  }
+  100% {
+    box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+  }
+}
+@-webkit-keyframes round {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes round {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+
+
+
+/*     preloader end   */
+
+.button {
+    position: fixed;
+    bottom: 5%;
+    right: 5%;
+    display: none;
+    text-align: center;
+    z-index: 999;
+    
+}
+
+.button img {
+	line-height: 45px;
+	background-color: crimson;
+	font-size: 44px;
+	width: 50px;
+	height: 50px;
+	border-radius: 15%;
+	cursor: pointer;
+	box-shadow: 2px 2px 4px rgba(0, 0, 0, .4);
+	padding: 9px;
+}
+
+
+.button img:hover{
+    background-color:  #000;
+}
+
+
+.content-section {
+  background: #ffffff;
+  padding: 10px 20px;
+  border: 1px solid #dddddd;
+  border-radius: 3px;
+  margin-bottom: 20px;
+}
+
+.account-img {
+  height: 125px;
+  width: 125px;
+  margin-right: 20px;
+  margin-bottom: 16px;
+}
+.account-heading {
+  font-size: 2.5rem;
+}
+.pro-link {
+   color: #ffffff;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*    blood group table   */
+
+
+.table_header_div{
+    padding: 50px 0px;
+}
+
+
+.form-inline input{
+    border-bottom-right-radius: 0px;
+    border-top-right-radius: 0px;
+    border:1px solid #BF3636;
+}
+.form-inline{
+    margin-top: 15px;
+    margin-left: 24%;
+}
+
+
+.btn-custom{
+    background-color: #BF3636;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    color: #fff;
+}
+
+.table_header h1{
+    font-size: 50px;
+    font-weight: 500;
+    color: #1b1a1a;
+    font-family: 'Kaushan Script', cursive;
+}
+
+
+
+
+

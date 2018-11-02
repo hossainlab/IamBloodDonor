@@ -1,0 +1,20 @@
+
+  <div class="container">
+            <div class="pagination">
+                <span class="step-links">
+                    {% if donors.has_previous %}
+                        <a href="?page=1">&laquo; Previous</a>
+                        <!--<a href="?page={{ donors.previous_page_number }}">previous</a>-->
+                    {% endif %}
+
+                    <span class="current">
+                        Page {{ donors.number }} of {{ donors.paginator.num_pages }}.
+                    </span>
+
+                    {% if donors.has_next %}
+                        <!--<a href="?page={{ donors.next_page_number }}">next</a>-->
+                        <a href="?page={{ donors.paginator.num_pages }}">Next &raquo;</a>
+                    {% endif %}
+                </span>
+            </div>
+            </div>
